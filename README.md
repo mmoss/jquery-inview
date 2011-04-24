@@ -4,7 +4,13 @@ This is a simple plugin I've thrown together for my blog/personal site. Using th
 
 The plugin uses jQuery 1.5's new [Deferred Object](http://api.jquery.com/category/deferred-object/) API.
 
-## Usage Example
+## Documentation
+
+$.fn.inView()
+
+- The inView() function, when called on a jQuery object, will return a new jQuery.Deferred object
+
+### Usage Example
 
 	// Add a 3rd party script, 
 	// but only when a specific element is in view
@@ -13,12 +19,6 @@ The plugin uses jQuery 1.5's new [Deferred Object](http://api.jquery.com/categor
 	$.when($el.inView()).then(function($el){
 		// ... some action
 	});
-
-## Documentation
-
-	$.fn.inView()
-
-- The inView() function, when called on a jQuery object, will return a new jQuery.Deferred object
 
 ## Dependencies
 
