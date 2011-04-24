@@ -14,6 +14,12 @@ The plugin uses jQuery 1.5's new [Deferred Object](http://api.jquery.com/categor
 		// ... some action
 	});
 
+## Documentation
+
+	$.fn.inView()
+
+- The inView() function, when called on a jQuery object, will return a new jQuery.Deferred object
+
 ## Dependencies
 
 - [jQuery 1.5](http://www.jquery.com/)
