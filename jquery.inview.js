@@ -43,7 +43,7 @@
 			});
 		});
 
-		if(viewTestInterval === null) {
+		if(queue.length > 0 && viewTestInterval === null) {
 			viewTestInterval = setInterval(resolvePromises, 350);
 		}
 
