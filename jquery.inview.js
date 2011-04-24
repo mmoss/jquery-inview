@@ -6,11 +6,11 @@
 
 	function isInView($el) {
 		var viewTop = $w.scrollTop(),
-			viewBottom = viewTop + $w.height(),
+			viewBtm = viewTop + $w.height(),
 			elTop = $el.offset().top,
-			elBottom = elTop + $el.height();
+			elBtm = elTop + $el.height();
 
-		return elBottom >= viewTop && elTop <= viewBottom;
+		return elBtm >= viewTop && elTop <= viewBtm;
 	}
 
 	function resolvePromises() {
@@ -18,9 +18,9 @@
 			var i;
 			for(i=queue.length-1; i>=0; i--) {
 				var itm = queue[i];
-				var $target = $(itm.target);
-				if(isInView($target)) {
-					itm.deferred.resolve($target);
+
+				if(isInView(itm.target)) {
+					itm.deferred.resolve(itm.target);
 					queue.splice(i, 1);
 				}
 			}
@@ -33,12 +33,12 @@
 	}
 
 	$.fn.inView = function(){
-		var $target = this,
+		var $this = $(this),
 			$deferred = $.Deferred();
 			
-		$target.each(function(){
+		$this.each(function(){
 			queue.push({
-				target: this,
+				target: $this,
 				deferred: $deferred
 			});
 		});
