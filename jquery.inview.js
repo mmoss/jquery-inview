@@ -33,23 +33,21 @@
 	}
 
 	$.fn.inView = function(){
-		var $this = $(this),
-			$deferred = $.Deferred();
-			
-		$this.each(function(){
-			queue.push({
-				target: $this,
-				deferred: $deferred
+		var $this = $(this);
+
+		return $.Deferred(function(dfd){
+			$this.each(function(){
+				queue.push({
+					target: $this,
+					deferred: dfd
+				});
 			});
-		});
 
-		if(queue.length > 0 && viewTestInterval === null) {
-			viewTestInterval = setInterval(resolvePromises, 350);
-		}
+			if(queue.length > 0 && viewTestInterval === null) {
+				viewTestInterval = setInterval(resolvePromises, 350);
+			}
 
-		return $deferred.promise();
+		}).promise();
 	};
 
-	$.fn.inView.getQueue = function(){ return queue; };
-	$.fn.inView.getInterval = function(){ return viewTestInterval; };
 }(jQuery, window));
