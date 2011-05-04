@@ -2,9 +2,9 @@
 (function($, w){
 	var $w = $(w),
 		queue = [],
-		viewTestInterval = null;
+		testInterval = null;
 
-	function isInView($el) {
+	function inView($el) {
 		var viewTop = $w.scrollTop(),
 			viewBtm = viewTop + $w.height(),
 			elTop = $el.offset().top,
@@ -13,21 +13,21 @@
 		return elBtm >= viewTop && elTop <= viewBtm;
 	}
 
-	function resolvePromises() {
+	function resolve() {
 		if(queue.length > 0){
 			var i;
 			for(i=queue.length-1; i>=0; i--) {
 				var itm = queue[i];
 
-				if(isInView(itm.target)) {
+				if(inView(itm.target)) {
 					itm.deferred.resolve(itm.target);
 					queue.splice(i, 1);
 				}
 			}
 
 			if(queue.length < 1) {
-				clearInterval(viewTestInterval);
-				viewTestInterval = null;
+				w.clearInterval(testInterval);
+				testInterval = null;
 			}
 		}
 	}
@@ -43,8 +43,8 @@
 				});
 			});
 
-			if(queue.length > 0 && viewTestInterval === null) {
-				viewTestInterval = setInterval(resolvePromises, 350);
+			if(queue.length > 0 && testInterval === null) {
+				testInterval = w.setInterval(resolve, 350);
 			}
 
 		}).promise();

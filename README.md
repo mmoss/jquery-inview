@@ -14,7 +14,7 @@ $.fn.inView()
 
 	// Add a 3rd party script, 
 	// but only when a specific element is in view
-	
+
 	var $el = $('#myElement');
 	$.when($el.inView()).then(function($el){
 		// ... some action
