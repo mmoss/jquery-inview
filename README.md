@@ -22,4 +22,4 @@ $.fn.inView()
 
 ## Dependencies
 
-- [jQuery 1.5](http://www.jquery.com/)
+- [jQuery 1.5+](http://www.jquery.com/)
