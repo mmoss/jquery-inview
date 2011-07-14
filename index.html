@@ -57,6 +57,26 @@
 <br/>      </p>
 
 
+
+
+<h2>Documentation</h2>
+
+<strong>$.inView()</strong>
+
+<p>The $.inView() function, when called will return a new jQuery.Deferred object that will resolve once all elements in the jQuery object have come into view.</p>
+
+<h3>Usage Example</h3>
+<p>
+<pre>
+
+var $el = $('#myElement');
+$.when($el.inView()).then(function($el){
+    alert('#myElement is now in view');
+});
+
+</pre>
+</p>
+
     <h2>Download</h2>
     <p>
       You can download this project in either
