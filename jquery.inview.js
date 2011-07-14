@@ -2,7 +2,7 @@
 (function($, w){
 	var $w = $(w),
 		queue = [],
-		timeout = null;
+		interval = null;
 
 	function inView($el) {
 		var viewTop = $w.scrollTop(),
@@ -26,10 +26,8 @@
 			}
 
 			if(queue.length < 1) {
-				w.clearTimeout(timeout);
-				timeout = null;
-			} else {
-				timeout = w.setTimeout(resolve, 300);
+				w.clearInterval(interval);
+				interval = null;
 			}
 		}
 	}
@@ -45,8 +43,8 @@
 				});
 			});
 
-			if(queue.length > 0 && timeout === null) {
-				timeout = w.setTimeout(resolve, 300);
+			if(queue.length > 0 && interval === null) {
+				interval = w.setInterval(resolve, 250);
 			}
 
 		}).promise();
