@@ -2,7 +2,7 @@
 (function($, w){
 	var $w = $(w),
 		queue = [],
-		testInterval = null;
+		timeout = null;
 
 	function inView($el) {
 		var viewTop = $w.scrollTop(),
@@ -26,8 +26,10 @@
 			}
 
 			if(queue.length < 1) {
-				w.clearInterval(testInterval);
-				testInterval = null;
+				w.clearTimeout(timeout);
+				timeout = null;
+			} else {
+				timeout = w.setTimeout(resolve, 300);
 			}
 		}
 	}
@@ -38,13 +40,13 @@
 		return $.Deferred(function(dfd){
 			$this.each(function(){
 				queue.push({
-					target: $this,
+					target: $(this),
 					deferred: dfd
 				});
 			});
 
-			if(queue.length > 0 && testInterval === null) {
-				testInterval = w.setInterval(resolve, 350);
+			if(queue.length > 0 && timeout === null) {
+				timeout = w.setTimeout(resolve, 300);
 			}
 
 		}).promise();

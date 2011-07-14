@@ -1,23 +1,20 @@
 # jQuery.inView Plugin(ish)
 
-This is a simple plugin I've thrown together for my blog/personal site. This script can be used to defer the loading of third party plugins, scripts, or anything else you want to so in a callback.
+This is a simple plugin I've thrown together for my blog/personal site, where I use it to defer the loading of [Disqus](http://disqus.com/) comments. This script can be used to defer the loading of third party plugins, scripts, or anything else you want to do once elements have come into view.
 
 The plugin uses jQuery 1.5's new [Deferred Object](http://api.jquery.com/category/deferred-object/) API.
 
 ## Documentation
 
-$.fn.inView()
+$.inView()
 
-- The inView() function, when called on a jQuery object, will return a new jQuery.Deferred object
+- The $.inView() function, when called will return a new jQuery.Deferred object that will resolve once all elements in the jQuery object have come into view.
 
 ### Usage Example
 
-	// Add a 3rd party script, 
-	// but only when a specific element is in view
-
 	var $el = $('#myElement');
 	$.when($el.inView()).then(function($el){
-		// ... some action
+		alert('#myElement is now in view');
 	});
 
 ## Dependencies
