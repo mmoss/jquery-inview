@@ -1,4 +1,4 @@
-/* Copyright 2011, Murray M. Moss */
+/* Copyright 2012, Murray M. Moss */
 jQuery(function($) {
 	
 	// move the fixture so that we can test for visibility of elements that exist at the VERY top of the page

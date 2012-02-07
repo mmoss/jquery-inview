@@ -2,7 +2,7 @@
 
 This is a simple plugin I've thrown together for my blog/personal site, where I use it to defer the loading of [Disqus](http://disqus.com/) comments. This script can be used to defer the loading of third party plugins, scripts, or anything else you want to do once elements have come into view.
 
-The plugin uses jQuery 1.5's new [Deferred Object](http://api.jquery.com/category/deferred-object/) API.
+The plugin uses jQuery's [Deferred Object](http://api.jquery.com/category/deferred-object/) API.
 
 ## Documentation
 

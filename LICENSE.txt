@@ -1,4 +1,4 @@
-Copyright (c) 2011, Murray M. Moss
+Copyright (c) 2012, Murray M. Moss
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

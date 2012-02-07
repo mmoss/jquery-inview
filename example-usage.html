@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Example jQuery.inView Usage</title>
-	<script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+	<script src="http://code.jquery.com/jquery.min.js"></script>
 	<script src="jquery.inview.js"></script>
 	<script id="example-script">
 	$(function(){		
@@ -26,7 +26,7 @@
 
 		// add an iframe to the page on scroll
 		$.when($('#two').inView()).then(function($el){
-			$el.append($('<iframe/>', {
+			$el.append($('\<iframe/>', {
 				src: 'http://google.com',
 				height: 140,
 				width: '100%'
@@ -42,7 +42,7 @@
 	<hr/>
 	<h2>Example Script</h2>
 	<pre id="code"></pre>
-	<script>$('#code').html($('#example-script').text().replace('<', '&lt;').replace('>', '&gt;'));</script>
+	<script>$('#code').html($('#example-script').text().replace('\<', '&lt;').replace('>', '&gt;'));</script>
 
 	<h2>Scroll to trigger</h2>
 	<div style="width:800px;margin:100px auto;">

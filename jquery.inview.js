@@ -1,4 +1,4 @@
-/* Copyright 2011, Murray M. Moss */
+/* Copyright 2012, Murray M. Moss */
 (function($, w){
 	var $w = $(w),
 		queue = [],
