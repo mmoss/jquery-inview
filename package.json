@@ -1,0 +1,35 @@
+{
+  "name":"jquery-inview",
+  "title":"jQuery.Color()",
+  "version":"1.1.0",
+  "author":{
+    "name":"Murray M. Moss",
+    "url":"https://github.com/mmoss"
+  },
+  "dependencies":{
+    "jquery":">=1.5"
+  },
+  "description":"A tiny (less than 1kb unminified) jQuery plugin that allows you to specify a callback to execute when an element is scrolled into view. Uses jQuery's Deferred Object API ($.Deferred)",
+  "files":[
+    "jquery.color.js"
+  ],
+  "homepage":"https://github.com/mmoss/jquery-inview",
+  "keywords":[
+    "promise",
+    "visible",
+    "in view",
+    "hsla"
+  ],
+  "licenses":[
+    {
+      "type":"BSD",
+      "url":"LICENSE.txt"
+    }
+  ],
+  "maintainers":[
+    {
+      "name":"Murray M. Moss",
+      "url":"https://github.com/mmoss"
+    }
+  ]
+}
