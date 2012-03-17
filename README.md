@@ -12,10 +12,11 @@ $.inView()
 
 ### Usage Example
 
-	var $el = $('#myElement');
-	$.when($el.inView()).then(function($el){
-		alert('#myElement is now in view');
-	});
+```
+$.when($('#myElement').inView()).then(function($el){
+  alert($el.attr('id') + ' is now in view');
+});
+```
 
 ## Dependencies
 
