@@ -12,9 +12,17 @@ $.inView()
 
 ### Usage Example
 
-```
+```js
 $.when($('#myElement').inView()).then(function($el){
   alert($el.attr('id') + ' is now in view');
+});
+```
+
+Or
+
+```js
+$('#myElement').inView(function(){
+  alert($(this).attr('id') + ' is now in view');
 });
 ```
 

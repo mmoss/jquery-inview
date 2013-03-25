@@ -5,7 +5,7 @@
 	<script src="http://code.jquery.com/jquery.min.js"></script>
 	<script src="jquery.inview.js"></script>
 	<script id="example-script">
-	$(function(){		
+	$(function(){
 
 		// add a simple animation to the page on scroll
 		$.when($('#one').inView()).then(function($el){
@@ -26,8 +26,8 @@
 
 		// add an iframe to the page on scroll
 		$.when($('#two').inView()).then(function($el){
-			$el.append($('\<iframe/>', {
-				src: 'http://google.com',
+			$el.append($('<iframe/>', {
+				src: window.document.location,
 				height: 140,
 				width: '100%'
 
